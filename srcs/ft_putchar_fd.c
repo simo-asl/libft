@@ -1,33 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mel-asla <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/14 21:08:13 by mel-asla          #+#    #+#             */
-/*   Updated: 2025/10/17 09:42:29 by mel-asla         ###   ########.fr       */
+/*   Created: 2025/10/17 15:30:15 by mel-asla          #+#    #+#             */
+/*   Updated: 2025/10/17 16:22:12 by mel-asla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnstr(const char *s1, const char *s2, size_t len)
+void	ft_putchar_fd(char c, int fd)
 {
-	size_t	i;
-	size_t	j;
-
-	i = 0;
-	if (!s2)
-		return ((char *)s1);
-	while (i < len && s1[i])
-	{
-		j = 0;
-		while (s1[i + j] == s2[j] && s2[j])
-			j++;
-		if (s2[j] == '\0')
-			return ((char *)&s1[i]);
-		i++;
-	}
-	return (NULL);
+	write(fd, &c, 1);
 }

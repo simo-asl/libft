@@ -6,7 +6,7 @@
 /*   By: mel-asla <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/14 02:21:20 by mel-asla          #+#    #+#             */
-/*   Updated: 2025/10/14 02:34:50 by mel-asla         ###   ########.fr       */
+/*   Updated: 2025/10/16 22:29:33 by mel-asla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ size_t	ft_strlcat(char *d, const char *s, size_t size)
 	s_len = ft_strlen(s);
 	if (size <= d_len)
 		return (size + s_len);
-	while (s[i] && (d_len + i) < size - 1)
+	while (s[i] && (d_len + i) < size - 1 && i < d_len)
 	{
 		d[i + d_len] = s[i];
 		i++;

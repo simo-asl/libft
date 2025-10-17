@@ -1,33 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mel-asla <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/14 21:08:13 by mel-asla          #+#    #+#             */
-/*   Updated: 2025/10/17 09:42:29 by mel-asla         ###   ########.fr       */
+/*   Created: 2025/10/17 11:12:54 by mel-asla          #+#    #+#             */
+/*   Updated: 2025/10/17 16:21:42 by mel-asla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnstr(const char *s1, const char *s2, size_t len)
+static size_t	ft_count(const char *s, char c)
 {
+	size_t	count;
 	size_t	i;
-	size_t	j;
 
 	i = 0;
-	if (!s2)
-		return ((char *)s1);
-	while (i < len && s1[i])
+	count = 1;
+	while (s[i] && s[i] == c)
+		i++;
+	if (s[i] == '\0')
+		return (0);
+	while (s[i])
 	{
-		j = 0;
-		while (s1[i + j] == s2[j] && s2[j])
-			j++;
-		if (s2[j] == '\0')
-			return ((char *)&s1[i]);
+		if (s[i] == c && s[i + 1] != c && s[i + 1] != '\0')
+			count++;
 		i++;
 	}
-	return (NULL);
+	return (count);
+}	
+
+char	**ft_split(char const *s, char c)
+{
+	char	**res;
+	size_t	count;
+	size_t	i;
+
+	if (!s)
+		return (ft_strdup(""));
+	i = 0;
 }

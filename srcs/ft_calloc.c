@@ -6,7 +6,7 @@
 /*   By: mel-asla <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/16 09:27:23 by mel-asla          #+#    #+#             */
-/*   Updated: 2025/10/16 13:27:28 by mel-asla         ###   ########.fr       */
+/*   Updated: 2025/10/17 09:37:37 by mel-asla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	*ft_calloc(size_t count, size_t size)
 	void	*d;
 
 	total = count * size;
-	if (count != (total / size) && size != count)
+	if (count != (total / size) && size != 0)
 		return (NULL);
 	d = malloc(total);
 	if (!d)
