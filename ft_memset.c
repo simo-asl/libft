@@ -6,7 +6,7 @@
 /*   By: mel-asla <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/13 22:20:31 by mel-asla          #+#    #+#             */
-/*   Updated: 2025/10/17 15:04:11 by mel-asla         ###   ########.fr       */
+/*   Updated: 2025/10/18 13:58:19 by mel-asla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,29 +26,33 @@ void	*ft_memset(void *s, int c, size_t n)
 	}
 	return (s);
 }
-/*
-#include <stdio.h>
+/*#include <stdio.h>
+#include <limits.h>
 int main()
 {
 	// 1 // 256 // 65536 // 16777216
-	int	arr[10] = {0};
-	int	i = 0;
-	int	c = 1337; // 00000101 00111001
-			 //     5         57
-	while (i < 10)
+	unsigned int	arr[10] = {INT_MIN, INT_MIN, 78, 0,5};
+	printf("%u ------<\n", arr[0]);	
+	// 00111001 00000101 57 5
+	int	i = 1;
+	int	rows = 4;
+	unsigned char *tmp_arr = (unsigned char *)arr;
+	unsigned char *ptr = (unsigned char *)arr;
+	while (i < 5)
 	{
-		ft_memset(&arr[i], 5, 1);
-		printf("arr[%i] = %i\n", i, arr[i]);
-		arr[i] <<= 8;
+		int	j = 0;
+		while (j < 4)
+		{
+			ft_memset((tmp_arr + rows) + j, *(ptr + j), 1);
+			j++;
+		}
+		rows += 4;
 		i++;
 	}
 	i = 0;
-	while (i < 10)
+	while (i < 5)
 	{
-		ft_memset(&arr[i], 57, 1);
-                printf("arr[%i] = %i\n", i, arr[i]);
+		printf("arr[%d] => %u\n", i, arr[i]);
 		i++;
 	}
-	if (c == arr[2])
-		printf("CONGRATULATIONS !!!\n");
 }*/

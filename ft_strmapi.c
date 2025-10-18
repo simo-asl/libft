@@ -1,55 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mel-asla <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/17 13:21:37 by mel-asla          #+#    #+#             */
-/*   Updated: 2025/10/17 15:01:28 by mel-asla         ###   ########.fr       */
+/*   Created: 2025/10/18 09:35:26 by mel-asla          #+#    #+#             */
+/*   Updated: 2025/10/18 09:45:38 by mel-asla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static size_t	ft_count(long int n)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
+	char	*d;
 	size_t	len;
+	size_t	i;
 
-	len = 1;
-	while (n >= 10)
-	{
-		n /= 10;
-		len++;
-	}
-	return (len);
-}
-
-char	*ft_itoa(int n)
-{
-	size_t	len;
-	char	*res;
-	long	nb;
-
-	len = 0;
-	nb = n;
-	if (n < 0)
-	{
-		len = 1;
-		nb *= -1;
-	}
-	len += ft_count(nb);
-	res = malloc(len + 1);
-	if (!res)
+	if (!s)
 		return (NULL);
-	res[len] = '\0';
-	while (len > 0)
+	i = 0;
+	len = ft_strlen(s);
+	d = malloc(len + 1);
+	if (!d)
+		return (NULL);
+	while (s[i])
 	{
-		len--;
-		res[len] = (nb % 10) + 48;
-		nb /= 10;
+		d[i] = f(i, s[i]);
+		i++;
 	}
-	if (n < 0)
-		res[0] = '-';
-	return (res);
+	d[i] = '\0';
+	return (d);
 }
