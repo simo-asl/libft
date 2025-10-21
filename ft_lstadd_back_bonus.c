@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mel-asla <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/18 15:45:14 by mel-asla          #+#    #+#             */
-/*   Updated: 2025/10/18 16:43:46 by mel-asla         ###   ########.fr       */
+/*   Created: 2025/10/21 04:12:41 by mel-asla          #+#    #+#             */
+/*   Updated: 2025/10/21 04:15:13 by mel-asla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,17 +16,13 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 {
 	t_list	*tmp;
 
-	if (!lst || !new)
+	if (!new || !lst)
 		return ;
-	if (*lst == NULL)
+	if (!*lst)
 	{
 		*lst = new;
-		new->next = NULL;
 		return ;
 	}
-	tmp = *lst;
-	while (tmp->next)
-		tmp = tmp->next;
+	tmp = ft_lstlast(*lst);
 	tmp->next = new;
-	new->next = NULL;
 }

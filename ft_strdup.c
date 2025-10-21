@@ -6,7 +6,7 @@
 /*   By: mel-asla <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/16 09:18:45 by mel-asla          #+#    #+#             */
-/*   Updated: 2025/10/17 09:38:24 by mel-asla         ###   ########.fr       */
+/*   Updated: 2025/10/18 21:33:29 by mel-asla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char	*ft_strdup(const char *s)
 	char	*d;
 
 	i = 0;
-	d = malloc(ft_strlen(s)) + 1;
+	d = malloc(ft_strlen(s) + 1);
 	if (!d)
 		return (NULL);
 	while (s[i])

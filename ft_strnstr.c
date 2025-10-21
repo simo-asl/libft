@@ -6,7 +6,7 @@
 /*   By: mel-asla <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/14 21:08:13 by mel-asla          #+#    #+#             */
-/*   Updated: 2025/10/17 09:42:29 by mel-asla         ###   ########.fr       */
+/*   Updated: 2025/10/21 03:57:16 by mel-asla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,12 @@ char	*ft_strnstr(const char *s1, const char *s2, size_t len)
 	size_t	j;
 
 	i = 0;
-	if (!s2)
+	if (*s2 == '\0')
 		return ((char *)s1);
 	while (i < len && s1[i])
 	{
 		j = 0;
-		while (s1[i + j] == s2[j] && s2[j])
+		while ((i + j) < len && s1[i + j] == s2[j] && s2[j])
 			j++;
 		if (s2[j] == '\0')
 			return ((char *)&s1[i]);

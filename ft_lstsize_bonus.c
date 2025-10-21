@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mel-asla <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/18 14:15:48 by mel-asla          #+#    #+#             */
-/*   Updated: 2025/10/18 14:18:12 by mel-asla         ###   ########.fr       */
+/*   Created: 2025/10/21 04:29:21 by mel-asla          #+#    #+#             */
+/*   Updated: 2025/10/21 04:30:19 by mel-asla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,13 @@
 
 int	ft_lstsize(t_list *lst)
 {
-	int		i;
-	t_list	*tmp;
+	int	i;
 
 	i = 0;
-	tmp = lst;
-	while (tmp)
+	while (lst)
 	{
-		tmp = tmp->next;
 		i++;
+		lst = lst->next;
 	}
 	return (i);
 }

@@ -6,7 +6,7 @@
 /*   By: mel-asla <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/14 03:05:19 by mel-asla          #+#    #+#             */
-/*   Updated: 2025/10/14 04:24:59 by mel-asla         ###   ########.fr       */
+/*   Updated: 2025/10/21 07:42:11 by mel-asla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ void	*ft_memmove(void *d, const void *s, size_t n)
 	size_t		i;
 	const char	*sp;
 
+	if (!d && !s)
+		return (NULL);
 	dp = (char *)d;
 	sp = (const char *)s;
 	i = 0;

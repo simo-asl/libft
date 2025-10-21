@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mel-asla <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/18 15:40:06 by mel-asla          #+#    #+#             */
-/*   Updated: 2025/10/18 15:42:00 by mel-asla         ###   ########.fr       */
+/*   Created: 2025/10/21 04:06:12 by mel-asla          #+#    #+#             */
+/*   Updated: 2025/10/21 04:12:20 by mel-asla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 
 void	ft_lstadd_front(t_list **lst, t_list *new)
 {
-	if (*lst != NULL)
-		new->next = *lst;
+	if (!new)
+		return ;
+	new->next = *lst;
 	*lst = new;
 }
