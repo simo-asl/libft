@@ -6,7 +6,7 @@
 /*   By: mel-asla <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/14 00:40:42 by mel-asla          #+#    #+#             */
-/*   Updated: 2025/10/21 05:10:38 by mel-asla         ###   ########.fr       */
+/*   Updated: 2025/10/22 22:01:57 by mel-asla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,14 @@
 
 void	*ft_memcpy(void *d, const void *s, size_t n)
 {
-	size_t		i;
-	char		*pd;
-	const char	*ps;
+	size_t				i;
+	unsigned char		*pd;
+	unsigned const char	*ps;
 
 	if (!s && !d)
 		return (NULL);
-	pd = (char *)d;
-	ps = (const char *)s;
+	ps = (unsigned const char *)s;
+	pd = (unsigned char *)d;
 	i = 0;
 	while (i < n)
 	{
