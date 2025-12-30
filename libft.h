@@ -6,7 +6,7 @@
 /*   By: mel-asla <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/13 15:04:52 by mel-asla          #+#    #+#             */
-/*   Updated: 2025/10/22 01:09:53 by mel-asla         ###   ########.fr       */
+/*   Updated: 2025/12/30 12:56:54 by mel-asla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 # include <stdlib.h>
 # include <unistd.h>
-
+# include <limits.h>
 typedef struct s_list
 {
 	void			*content;
@@ -42,6 +42,7 @@ int		ft_strncmp(const char *s1, const char *s2, size_t n);
 void	*ft_memchr(const void *s, int c, size_t n);
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
 char	*ft_strnstr(const char *s1, const char *s2, size_t len);
+long	ft_atol(const char *s);
 int		ft_atoi(const char *s);
 char	*ft_strdup(const char *s);
 void	*ft_calloc(size_t count, size_t size);
